@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-import { Link } from 'components';
+import { Link, Spinner } from 'components';
 import { Layout } from 'components/users';
 import { userService } from 'services';
 
@@ -55,8 +55,8 @@ function Index() {
                     )}
                     {!users &&
                         <tr>
-                            <td colSpan="4" className="text-center">
-                                <div className="spinner-border spinner-border-lg align-center"></div>
+                            <td colSpan="4">
+                                <Spinner />
                             </td>
                         </tr>
                     }
