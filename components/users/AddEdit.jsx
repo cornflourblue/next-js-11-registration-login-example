@@ -8,8 +8,9 @@ import { userService, alertService } from 'services';
 
 export { AddEdit };
 
-function AddEdit(user) {
-    const isAddMode = !user.id;
+function AddEdit(props) {
+    const user = props?.user;
+    const isAddMode = !user;
     const router = useRouter();
     
     // form validation rules 
@@ -29,7 +30,7 @@ function AddEdit(user) {
 
     // set default form values if in edit mode
     if (!isAddMode) {
-        formOptions.defaultValues = user;
+        formOptions.defaultValues = props.user;
     }
 
     // get functions to build form with useForm() hook
